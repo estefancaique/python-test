@@ -3,9 +3,13 @@ from flask import Flask, render_template, request # Importa a biblioteca
 app = Flask(__name__) # Inicializa a aplicação
 
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/<entrada>')
 def validaCPF():
-#    return render_template('index.html')
-    digitaCPF = request.args.get('cpf')
+
+#    digitaCPF = request.args.get('cpf')
     
     entrada = '{}.{}.{}-{}'.format(digitaCPF[:3], digitaCPF[3:6], digitaCPF[6:9], digitaCPF[9:])
     cpf_lista ='blacklist.txt'
@@ -28,8 +32,8 @@ def validaCPF():
         return 'Livre' 
     
 
-if __name__ == '__validaCPF__':
-  app.run(debug=True) # Executa a aplicação
+if __name__ == '__main__':
+    app.run() # Executa a aplicação
   
   
   #validaCPF()
