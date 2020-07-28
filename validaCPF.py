@@ -13,6 +13,8 @@ def validaCPF(entrada = str(input("Digite o CPF: "))):
             if entrada == cpf.strip():
                 cpf_valido = True
                 break
+            else:
+                cpf_valido = False
             linha+=1
     c.close()
 
