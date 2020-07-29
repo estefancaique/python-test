@@ -7,11 +7,11 @@ def index():
     return render_template('index.html')
 
 @app.route('/<entrada>')
-def validaCPF():
+def validaCPF(entrada):
 
 #    digitaCPF = request.args.get('cpf')
     
-    entrada = '{}.{}.{}-{}'.format(digitaCPF[:3], digitaCPF[3:6], digitaCPF[6:9], digitaCPF[9:])
+#    entrada = '{}.{}.{}-{}'.format(cpf[:3], cpf[3:6], cpf[6:9], cpf[9:])
     cpf_lista ='blacklist.txt'
     cpf_valido = False
     
@@ -34,7 +34,3 @@ def validaCPF():
 
 if __name__ == '__main__':
     app.run() # Executa a aplicação
-  
-  
-  #validaCPF()
-
