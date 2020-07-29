@@ -6,12 +6,10 @@ app = Flask(__name__) # Inicializa a aplicação
 def index():
     return render_template('index.html')
 
-@app.route('/<entrada>')
-def validaCPF(entrada):
+@app.route('/<cpf>')
+def validaCPF(cpf):
 
-#    digitaCPF = request.args.get('cpf')
-    
-#    entrada = '{}.{}.{}-{}'.format(cpf[:3], cpf[3:6], cpf[6:9], cpf[9:])
+    entrada = '{}.{}.{}-{}'.format(cpf[:3], cpf[3:6], cpf[6:9], cpf[9:])
     cpf_lista ='blacklist.txt'
     cpf_valido = False
     
